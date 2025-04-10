@@ -1,3 +1,69 @@
 .modal {
-    background: #c6d0ff7a;
+	background: #c6d0ff7a;
+}
+
+div:not(.form-check):has(>input:required) label::after, label.required::after {
+	content: " *";
+	COLOR: red;
+}
+
+.card {
+	position: relative;
+}
+
+.card>h5 {
+	position: absolute;
+	top: -15px;
+	left: 23px;
+	background: #fff;
+	padding: 0 .5em;
+}
+
+#form .row {
+	max-width: 80%;
+}
+
+.combined-input>div:has(:focus) {
+	border-color: #86b7fe;
+	outline: 0;
+	box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
+}
+
+.combined-input input, .combined-input select {
+	border: none !important;
+	border-bottom: solid 1px #000 !important;
+	box-shadow: none !important;
+	width: fit-content;
+	min-width: 20px;
+	border-radius: 0;
+}
+
+.combined-input>.input-group>div:not(:first-child) input:not(:focus)::placeholder {
+	color: transparent;
+}
+
+
+.phone-input input::placeholder {
+	color: grey !important;
+}
+
+.row>label {
+	margin-left: -1rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.address>div {
+	width: 50%;
+}
+
+
+select:focus {
+	border-color: rgb(189, 215, 255) !important;
+}
+
+form.was-validated div.form-control:has(:invalid) {
+	border-color: red;
 }
