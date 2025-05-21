@@ -18,10 +18,19 @@
       defer
     ></script>
 
+    <script src="authentication.js" type="module" defer></script>
+
     <title>Efektywne formularze</title>
   </head>
 
   <body>
+    <div class="container mt-4 mb-4">
+      <button id="signInButton" class="btn btn-primary">
+        Create Account / Sign In
+      </button>
+      <button id="signOutButton" class="btn btn-secondary">Sign Out</button>
+    </div>
+
     <div class="container">
       <h1>Uzupełnij formularz</h1>
       <form id="form">
@@ -103,8 +112,9 @@
             <input
               type="email"
               class="form-control py-2"
-              id="exampleInputEmail1"
+              id="emailInput"
               autocomplete="email"
+              name="email"
               required
               placeholder="Wpisz adres email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -267,12 +277,7 @@
             </div>
             <div class="mb-3">
               <label for="country" class="form-label required">Kraj</label>
-              <select
-                class="form-select"
-                id="country"
-                required
-                autocomplete="country"
-              >
+              <select class="form-select" id="country" required>
                 <option value="">Wybierz kraj</option>
                 <!-- Options will be filled by JavaScript -->
               </select>

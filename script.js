@@ -32,7 +32,7 @@ function getCountryByIP() {
     .then((data) => {
       const country = data.country;
 
-      document.querySelector("#country").value = country;
+      countryInput.value = country;
 
       getCountryCode(country);
     })
@@ -148,11 +148,11 @@ function bindFormLogic() {
     });
 }
 
-(() => {
+(async () => {
   // nasłuchiwania na zdarzenie kliknięcia myszką
   document.addEventListener("click", handleClick);
 
-  fetchAndFillCountries();
+  await fetchAndFillCountries();
   getCountryByIP();
 
   bindNameLogic();
